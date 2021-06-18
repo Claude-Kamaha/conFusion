@@ -9,7 +9,7 @@ import { Leader } from '../shared/leader';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
-leader: Leader;
+leader: Leader[];
   
   constructor(
      private leaderservice: LeaderService,
@@ -17,8 +17,10 @@ leader: Leader;
     ) { }
 
   ngOnInit(): void {
-    const id = this.activatedroute.snapshot.params['id'];
-    this.leader = this.leaderservice.getLeader(id);
-  }
+   
+    //const id = this.activatedroute.snapshot.params['id'];
+    this.leader = this.leaderservice.getLeaders();
+    console.log(this.leader)
 
+}
 }
