@@ -19,8 +19,9 @@ leader: Leader[];
   ngOnInit(): void {
    
     //const id = this.activatedroute.snapshot.params['id'];
-    this.leader = this.leaderservice.getLeaders();
-    console.log(this.leader)
+    this.leaderservice.getLeaders()
+    .then((leader)=>this.leader=leader);
+    //console.log(this.leader)
 
 }
 }
